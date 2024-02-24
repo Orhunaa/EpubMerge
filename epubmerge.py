@@ -243,7 +243,7 @@ def doMerge(outputio, files, authoropts=[], titleopt=None, descopt=None,
         usedauthors=dict()
         for authorlist in useauthors:
             for author in authorlist:
-                if( not usedauthors.has_key(author) ):
+                if author not in usedauthors:
                     usedauthors[author]=author
                     metadata.appendChild(newTag(contentdom,"dc:creator",
                                                 attrs={"opf:role":"aut"},
